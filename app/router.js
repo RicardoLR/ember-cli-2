@@ -7,7 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('users', function() {});
+  this.resource('users', function() {
+    this.route('show',{path: '/:user_id'});
+    this.route('edit',{path: '/:user_id/edit'});
+  });
+  this.route('users');
 });
 
 export default Router;
@@ -21,5 +25,5 @@ en un ruta,
 
 > ember new contactmanager
 NOTA: si sale You cannot use the new command inside an ember-cli project.
-	Borrar package.json
+    Borrar package.json
 */
